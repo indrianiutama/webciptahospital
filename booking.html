@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservasi Online | PT. Cipta Hospital Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 font-sans">
+    <!-- Header -->
+    <header class="text-center py-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-green-800">Reservasi Online</h1>
+        <p class="text-green-700 mt-2">Pesan layanan kesehatan dengan mudah dan cepat</p>
+    </header>
+
+    <!-- Form Reservasi -->
+    <section class="max-w-lg mx-auto bg-white rounded-lg shadow p-6">
+        <form id="bookingForm" class="space-y-4">
+            <div>
+                <label for="name" class="block text-green-800 font-semibold">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required class="w-full border border-green-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div>
+                <label for="email" class="block text-green-800 font-semibold">Email</label>
+                <input type="email" id="email" name="email" required class="w-full border border-green-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div>
+                <label for="phone" class="block text-green-800 font-semibold">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required class="w-full border border-green-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div>
+                <label for="date" class="block text-green-800 font-semibold">Tanggal Reservasi</label>
+                <input type="date" id="date" name="date" required class="w-full border border-green-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div>
+                <label for="service" class="block text-green-800 font-semibold">Pilih Layanan</label>
+                <select id="service" name="service" required class="w-full border border-green-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <option value="">-- Pilih Layanan --</option>
+                    <option value="Rawat Inap">Rawat Inap</option>
+                    <option value="Rawat Jalan">Rawat Jalan</option>
+                    <option value="UGD 24 Jam">UGD 24 Jam</option>
+                    <option value="Medical Check Up">Medical Check Up</option>
+                    <option value="Laboratorium">Laboratorium</option>
+                    <option value="Radiologi">Radiologi</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition duration-300 transform hover:scale-105">Kirim Reservasi</button>
+        </form>
+        <p id="confirmationMessage" class="text-green-700 mt-4 text-center hidden">Reservasi berhasil dikirim! Kami akan menghubungi Anda segera.</p>
+    </section>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('confirmationMessage').classList.remove('hidden');
+            this.reset();
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-green-100 text-green-800 p-6 text-center mt-8">
+        &copy; 2025 PT. Cipta Hospital Indonesia | Dikembangkan oleh Indriani Utama
+    </footer>
+</body>
+</html>
